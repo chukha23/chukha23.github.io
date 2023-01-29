@@ -158,8 +158,12 @@ function closeNav() {
 function openMenuNav() {
     var addWidth;
     if(document.getElementById("sidebar").style.display == 'none') { 
-        document.getElementById("sidebar").style.display = 'block';
-        addWidth = 196;
+        document.getElementById("sidebar").style.display = '';
+        if ($('.container').width() > 576) {
+            addWidth = 196;
+        } else {
+            addWidth = 0;
+        }
     } else {
         document.getElementById("sidebar").style.display = 'none';
         addWidth = 0;
